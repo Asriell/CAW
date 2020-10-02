@@ -1,7 +1,7 @@
 # l'UE : 
 ## Objectifs Pédagogiques des TPs
 ### TP 2 : Programmation Java côté serveur
-![Objectifs Pedagogiques TP2](sujetsTps/ObjectifsPedagogiques/OP1)
+![Objectifs Pedagogiques TP2](sujetsTps/ObjectifsPedagogiques/OP1.PNG)
 
 # Préambule
 
