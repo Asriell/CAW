@@ -34,6 +34,11 @@
 ## TP 6 : Web Performance
 ### Objectifs pédagogiques
 ![Objectifs Pedagogiques TP6](ObjectifsPedagogiques/OP6.PNG)
+### Détails du TP
+![Détails TP6-1](details/TP6-1.PNG)
+![Détails TP6-2](details/TP6-2.PNG)
+![Détails TP6-3](details/TP6-3.PNG)
+
 ## TP 7 : Optimisation d'une Single-Page Application
 ### Objectifs pédagogiques
 ![Objectifs Pedagogiques TP7](ObjectifsPedagogiques/OP7.PNG)
