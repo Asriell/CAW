@@ -1,0 +1,387 @@
+swagger: "2.0"
+info:
+  description: "Description de l'API de l'application de blog. Vous pouvez changer les valeurs de 'host' et 'basePath' pour l'adapter Ã  votre machine. Les autres valeurs ne doivent pas etre modofiees."
+  version: "1.0.0"
+  title: "Mes Copains !"
+host: "localhost:8080"
+basePath: "/v2"
+tags:
+- name: "groupes"
+  description: "Gestion des groupes"
+- name: "billets"
+  description: "Gestion des billets"
+- name: "commentaires"
+  description: "Gestion des commentaires"
+- name: "users"
+  description: "Gestion des utilisateurs"
+schemes:
+- "http"
+paths:
+  /groupes:
+    get:
+      tags:
+      - "groupes"
+      summary: "Recuperer la liste des groupes"
+      description: "Renvoie les URI des groupes de l'application"
+      operationId: "getAllGroupes"
+      produces:
+      - "application/json"
+      - "application/xml"
+      - "text/html"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Groupes"
+        401:
+          description: "Utilisateur non authentifié"
+      security:
+      - pseudo_auth: []
+    post:
+      tags:
+      - "groupes"
+      summary: "Créer un groupe"
+      description: "Crée un nouveau groupe"
+      operationId: "addGroupe"
+      consumes:
+      - "application/json"
+      - "application/x-www-form-urlencoded"
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "groupe"
+        description: "nom du groupe"
+        required: true
+        schema:
+          $ref: "#/definitions/Groupe/properties/nom"
+      responses:
+        201:
+          description: "Groupe créé"
+        400:
+          description: "Pas de paramètres acceptables dans la requête"
+        401:
+          description: "Utilisateur non authentifié"
+      security:
+      - pseudo_auth: []
+  /groupes/{groupeKey}:
+    get:
+      tags:
+      - "groupes"
+      summary: "Retrouver un groupe"
+      description: "Renvoie une représentation d'un groupe"
+      operationId: "getGroupeById"
+      produces:
+      - "application/json"
+      - "application/xml"
+      - "text/html"
+      parameters:
+      - name: "groupeKey"
+        in: "path"
+        description: "Clé du groupe"
+        required: true
+        type: "string"
+      - $ref: "#/securityDefinitions/pseudo_auth"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Groupe"
+        401:
+          description: "Utilisateur non authentifié"
+        404:
+          description: "Groupe non trouvé"
+      security:
+      - pseudo_auth: []
+
+  /groupes/{groupeKey}/billets:
+    get:
+      tags:
+      - "billets"
+      summary: "RÃ©cupÃ©rer la liste des billets d'un groupe"
+      description: "Renvoie les URI des billets du groupe demandé"
+      operationId: "getAllBilletsFromGroupe"
+      produces:
+      - "application/json"
+      - "application/xml"
+      - "text/html"
+      parameters:
+      - name: "groupeKey"
+        in: "path"
+        description: "Id du groupe"
+        required: true
+        type: "string"
+      - $ref: "#/securityDefinitions/pseudo_auth"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Billets"
+        401:
+          description: "Utilisateur non authentifié"
+        403:
+          description: "Utilisateur non membre du groupe"
+      security:
+      - pseudo_auth: []
+    post:
+      tags:
+      - "billets"
+      summary: "Créer un billet"
+      description: "Crée un nouveau billet dans le groupe"
+      operationId: "addBillet"
+      consumes:
+      - "application/json"
+      - "application/x-www-form-urlencoded"
+      - "application/xml"
+      parameters:
+      - in: "path"
+        name: "groupeKey"
+        description: "Clé du groupe"
+        required: true
+        type: "integer"
+      - in: "body"
+        name: "billet"
+        description: "billet à créer"
+        required: true
+        schema:
+          $ref: "#/definitions/Billet"
+      - $ref: "#/securityDefinitions/pseudo_auth"
+      responses:
+        201:
+          description: "Billet créé"
+        400:
+          description: "Pas de paramètres acceptables dans la requête"
+        401:
+          description: "Utilisateur non authentifié"
+        403:
+          description: "Utilisateur non membre du groupe"
+      security:
+      - pseudo_auth: []
+  /groupes/{groupeKey}/billets/{billetId}:
+    get:
+      tags:
+      - "billets"
+      summary: "Retrouver un billet"
+      description: "Renvoie une représentation d'un billet"
+      operationId: "getBilletById"
+      produces:
+      - "application/json"
+      - "application/xml"
+      - "text/html"
+      parameters:
+      - name: "groupeKey"
+        in: "path"
+        description: "Clé du groupe"
+        required: true
+        type: "string"
+      - name: "billetId"
+        in: "path"
+        description: "Id du billet"
+        required: true
+        type: "integer"
+      - $ref: "#/securityDefinitions/pseudo_auth"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Billet"
+        401:
+          description: "Utilisateur non authentifié"
+        403:
+          description: "Utilisateur non membre du groupe"
+        404:
+          description: "Billet non trouvé"
+      security:
+      - pseudo_auth: []
+
+  /groupes/{groupeKey}/billets/{billetId}/commentaires:
+    post:
+      tags:
+      - "commentaires"
+      summary: "Créer un commentaire"
+      description: "Ajoute un nouveau commentaire au billet"
+      operationId: "addCommentaire"
+      consumes:
+      - "application/json"
+      - "application/x-www-form-urlencoded"
+      - "application/xml"
+      parameters:
+      - in: "path"
+        name: "groupeKey"
+        description: "Clé du groupe"
+        required: true
+        type: "string"
+      - name: "billetId"
+        in: "path"
+        description: "Id du billet"
+        required: true
+        type: "integer"
+      - in: "body"
+        name: "commentaire"
+        description: "Commentaire à créer"
+        required: true
+        schema:
+          $ref: "#/definitions/Commentaires"
+      - $ref: "#/securityDefinitions/pseudo_auth"
+      responses:
+        201:
+          description: "Commentaire créé"
+        400:
+          description: "Pas de paramètres acceptables dans la requête"
+        401:
+          description: "Utilisateur non authentifié"
+        403:
+          description: "Utilisateur non membre du groupe"
+      security:
+      - pseudo_auth: []
+
+  /Init:
+    post:
+      tags:
+      - "users"
+      summary: "Connecter un utilisateur"
+      description: "Créé un nouvel utilisateur et le connecte à l'aide d'un token JWT"
+      operationId: "loginUser"
+      consumes:
+      - "application/json"
+      - "application/x-www-form-urlencoded"
+      - "application/xml"
+      parameters:
+      - name: "pseudo"
+        in: "body"
+        description: "login de l'utilisateur"
+        required: true
+        schema:
+          $ref: "#/definitions/Pseudo"
+      responses:
+        201:
+          description: "Utilisateur créé"
+          headers:
+            Authorization:
+              type: "string"
+              description: "le token d'authentification"
+        400:
+          description: "Pas de paramètres acceptables dans la requête"
+  /Deco:
+    post:
+      tags:
+      - "users"
+      summary: "Déconnexion de l'utilisateur connecté"
+      description: "Déconnecte l'utilisateur sans l'enlever de la liste. Si vous passez l'authentification dans des headers HTTP, cette méthode ne fait rien mais répond que l'opération s'est bien passée."
+      operationId: "logoutUser"
+      parameters:
+      - $ref: "#/securityDefinitions/pseudo_auth"
+      responses:
+        204:
+          description: "successful operation"
+        401:
+          description: "Utilisateur non authentifié"
+securityDefinitions:
+  pseudo_auth:
+    type: apiKey
+    in: header
+    name: Authorization
+definitions:
+  Groupe:
+    type: "object"
+    required:
+    - "nom"
+    properties:
+      nom:
+        type: "string"
+        description: "Nom du groupe"
+      description:
+        type: "string"
+        description: "Description du groupe"
+      proprietaire:
+        type: "string"
+        description: "Créateur du groupe"
+      membres:
+        type: "array"
+        description: "Liste des membres du groupe"
+        items:
+          type: "string"
+      billets:
+        type: "array"
+        description: "Liste des billets contenus dans le groupe"
+        items:
+          $ref: "#/definitions/Billet"
+    xml:
+      name: "groupe"
+  Billet:
+    type: "object"
+    properties:
+      titre:
+        type: "string"
+        description: "Titre du billet"
+      contenu:
+        type: "string"
+        description: "Contenu du billet"
+      auteur:
+        type: "string"
+        description: "Auteur du billet"
+      commentaires:
+        type: "array"
+        description: "Liste des commentaires du billet"
+        items:
+          $ref: "#/definitions/Commentaire"
+    xml:
+      name: "billet"
+  Commentaire:
+    type: "object"
+    properties:
+      auteur:
+        type: "string"
+        description: "Auteur du commentaire"
+      contenu:
+        type: "string"
+        description: "Contenu du commentaire"
+      titre:
+        type: "string"
+        description: "Titre du commentaire"
+    xml:
+      name: "commentaire"
+  Groupes:
+    type: "object"
+    properties:
+      groupes:
+        type: "array"
+        items:
+          $ref: "#/definitions/Groupe"
+        xml:
+          name: "groupe"
+    xml:
+      name: "groupes"
+  Billets:
+    type: "object"
+    properties:
+      lastBillet:
+        type: "array"
+        items:
+          $ref: "#/definitions/Billet"
+      billets:
+        type: "array"
+        items:
+          $ref: "#/definitions/Billet"
+        xml:
+          name: "billet"
+    xml:
+      name: "billets"
+  Commentaires:
+    type: "object"
+    properties:
+      commentaires:
+        type: "array"
+        items:
+          type: "string"
+          xml:
+            name: "commentaire"
+    xml:
+      name: "commentaires"
+  Pseudo:
+    type: "object"
+    properties:
+      pseudo:
+        type: "string"
+externalDocs:
+  description: "Voir le sujet du TP"
+  url: "https://perso.liris.cnrs.fr/lionel.medini/enseignement/M1IF03/TP/TP_REST.html"

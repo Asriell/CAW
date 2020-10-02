@@ -1,0 +1,35 @@
+<script type="text/mustache" id="grp_tpl">
+    <h2>{{nom}}</h2>
+    <p><b>Description : </b> {{description}} </p>
+    <p><b>Auteur : </b> {{auteur}} </p>
+    <p><b>Membres : </b><ul>{{#membres}}
+            <li>{{.}}</li>
+        {{/membres}}</ul>
+    </p>
+
+    <p><b>Billets : </b><ul>{{#billets}}
+            <li><button onclick="redirectionBillets('{{.}}')">{{.}}</button></li>
+        {{/billets}}</ul>
+    </p>
+    </script>
+
+    <p>Créer un nouveau billet :
+        <input type='text' name='titre' id="titre">
+        <textarea name="contenu" id="contenu"></textarea>
+        <input type='submit' value='Envoyer'onclick="CreerBillet()">
+    </p>
+
+<section id='groupe' class='inactive'>
+    <h2>Groupe ...</h2>
+    <h3>Description</h3>
+    <p id="grpDesc"></p>
+    <h3>Billets</h3>
+    <!-- Pour chaque élément de la liste, l'interface doit proposer à l'utilisateur de :
+        - visualiser le billet
+        - modifier le titre du billet (aide : attribut contenteditable)
+        - supprimer le billet
+    -->
+    <ul id='bltList'></ul>
+    <hr>
+    <p><a href='#groupes'>Liste des groupes</a></p>
+</section>

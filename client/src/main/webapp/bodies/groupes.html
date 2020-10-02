@@ -1,0 +1,22 @@
+<script type="text/mustache" id="groupes_template">
+    {{#groupes}}
+        <li><a href = #groupe/{{.}}>{{.}}</a></li>
+    {{/groupes}}
+</script>
+
+<p>Créer un nouveau groupe :
+    <input type="text" name="GroupeName" id="GroupeName">
+</p>
+<input type="submit" value="Créer" onclick="CreerGroupe()">
+
+<section id='groupes' class='inactive'>
+    <h2>Liste des groupes</h2>
+    <!-- Pour chaque élément de la liste, l'interface doit proposer à l'utilisateur de :
+        - s'inscrire au groupe
+        - se désinscrire du groupe
+        - accéder au groupe
+        - supprimer le groupe
+        Les résultats de l'opération invoquée par le client seront affichés dans le div "errMsg" -->
+    <ul id='groupesList'></ul>
+    <p><a href='#deco'>Déconnexion</a></p>
+</section>

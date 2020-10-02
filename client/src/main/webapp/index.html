@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <title>Mes Copains !</title>
+        <meta charset="UTF-8">
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src="js/mustache.js"></script>
+        <script src="js/jquery.cookie.js"></script>
+    </head>
+    <body onhashchange="routage()" onload="routage()">
+        <h1>Mes Copains (en AJAX) !</h1>
+        <div id="errMsg"></div>
+        <aside>
+            <h2 id="menuTitre" style="cursor: pointer">Menu</h2>
+            <ul id="menu">
+                <li><a href='#index' class="select">Accueil</a></li>
+                <li><a href='#groupes' class="select">Groupes</a></li>
+                <li><a href='#groupe' class="select">Groupe</a></li>
+                <li><a href='#billet' class="select">Billet</a></li>
+                <li><a href='#users' class="select">Utilisateurs</a></li>
+                <li><a href='#deco' class="select">Déconnexion</a></li>
+            </ul>
+        </aside>
+        <div id="content">
+            <section id='index' class='active'>
+                <h2>Bienvenue sur Chatons.org</h2>
+                    <p>Entrez votre pseudo :
+                        <input type="text" name="pseudo" id="pseudo">
+                        <input type="submit" value="Connexion" onclick="Connexion()">
+                    </p>
+            </section>
+        </div>
+
+
+        <div id="test"></div>
+    <script src="js/xhr.js"></script>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<script type="text/mustache" id="billet_tpl">
+    <h2>{{titre}}</h2>
+    <p><b>Contenu : </b> {{contenu}} </p>
+    <p><b>Auteur : </b> {{auteur}} </p>
+    </script>
+
+<script type="text/mustache" id="commentaires_template">
+    {{#commentaires}}
+        <li style="cursor:pointer" onclick="AffichageCommentaire('{{.}}')">{{.}}</a></li>
+    {{/commentaires}}
+    </script>
+
+
+<script type="text/mustache" id="commentaire_tpl">
+    <p>{{texte}} </p>
+    <p><b>Auteur : </b> {{auteur}} </p>
+    </script>
+
+
+<section id='billet' class='inactive'>
+    <p>Ceci est un billet de <span id='bltAuteur'></span>.</p>
+    <h1 id="bltTitre"/></h1>
+    <div class="contenu" id="bltContenu"></div>
+    <h2>Commentaires</h2>
+    <!-- Pour chaque élément de la liste, l'interface doit proposer à l'utilisateur de :
+        - modifier le commentaire
+        - supprimer le commentaire
+    -->
+    <ul id='commentList'></ul>
+
+</section>
+
+<p>Ajouter un commentaire :
+    <input type="text" name="commentaire" id="texte">
+    <input type="submit" value="Envoyer" onclick="CreerCommentaire()">
+</p>
+<p><a href="#groupes">Retour au groupe</a></p>
+<p><a href="#deco">Se déconnecter</a></p>
+
+
+<p><b>Commentaires : </b></p>
+<ul id="CommentairesList"></ul>
+
+<p><b>Commentaire Selectionne</b>
+<div id="comSelect">
+
+</div>
+</p>
