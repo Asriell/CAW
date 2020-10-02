@@ -13,6 +13,8 @@
 ### TP 7 : Optimisation d'une Single-Page Application
 ![Objectifs Pedagogiques TP7](sujetsTps/ObjectifsPedagogiques/OP7.PNG)
 
+### ![Plus de détails sur les différents TPs dans le repertoire "sujetsTps"]
+
 
 # Préambule
 
