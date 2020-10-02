@@ -5,7 +5,7 @@
 + [TP 4 : Web APIs (programmation REST)](#tp-4--web-apis-programmation-rest)
 + [TP 5 : Programmation côté client (requêtage asynchrone)](#tp-5--programmation-côté-client-requêtage-asynchrone)
 + [TP 6 : Web Performance](#tp-6--web-performance)
-+ [TP 7 : Optimisation d'une Single-Page Application](#tp-7--optimisation-d-une-single-page-application)
++ [TP 7 : Optimisation d'une Single-Page Application](#tp-7--optimisation-dune-single-page-application)
 # Détails des TPs
 ## TP 1 : technologies côté serveur
 ### Objectifs pédagogiques
