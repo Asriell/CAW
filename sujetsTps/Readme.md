@@ -1,7 +1,7 @@
 # Les différents TPs
--
+==
 + [TP 1 : technologies côté serveur](#tp-1--technologies-côté-serveur)
-+ [TP 2 : Programmation Java côté serveur](#tp-2--programmation-java-cote-serveur)
++ [TP 2 : Programmation Java côté serveur](#tp-2--programmation-java-côté-serveur)
 # Détails des TPs
 ## TP 1 : technologies côté serveur
 ### Objectifs pédagogiques
