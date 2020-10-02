@@ -1,10 +1,8 @@
 # Les différents TPs
-```
 + [TP 1 : technologies côté serveur](#tp-1--technologies-côté-serveur)
 + [TP 2 : Programmation Java côté serveur](#tp-2--programmation-java-côté-serveur)
 + [TP 3 : Design patterns côté serveur en Java](#tp-3--design-patterns-côté-serveur-en-java)
 + [TP 4 : Web APIs (programmation REST)](#tp-4--web-apis-(programmation-rest))
-```
 # Détails des TPs
 ## TP 1 : technologies côté serveur
 ### Objectifs pédagogiques
