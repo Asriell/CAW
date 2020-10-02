@@ -4,6 +4,15 @@
 ![Objectifs Pedagogiques TP2](sujetsTps/ObjectifsPedagogiques/OP2.PNG)
 ### TP 3 : Design patterns côté serveur en Java
 ![Objectifs Pedagogiques TP3](sujetsTps/ObjectifsPedagogiques/OP3.PNG)
+### TP 4 : Web APIs (programmation REST)
+![Objectifs Pedagogiques TP4](sujetsTps/ObjectifsPedagogiques/OP4.PNG)
+### TP 5 : Programmation côté client (requêtage asynchrone)
+![Objectifs Pedagogiques TP5](sujetsTps/ObjectifsPedagogiques/OP5.PNG)
+### TP 6 : Web Performance
+![Objectifs Pedagogiques TP6](sujetsTps/ObjectifsPedagogiques/OP6.PNG)
+### TP 7 : Optimisation d'une Single-Page Application
+![Objectifs Pedagogiques TP7](sujetsTps/ObjectifsPedagogiques/OP7.PNG)
+
 
 # Préambule
 
