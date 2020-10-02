@@ -1,4 +1,19 @@
-# Détails des TPs 
+# Détails des TPs
+## TP 1 : technologies côté serveur
+### Objectifs pédagogiques
+![Objectifs Pedagogiques TP1](ObjectifsPedagogiques/OP1.PNG)
+### Détails du TP
+![Détails TP1-1](details/TP1-1.PNG)
+![Détails TP1-2-1](details/TP1-2-1.PNG)
+![Détails TP1-2-2](details/TP1-2-2.PNG)
+![Détails TP1-3](details/TP1-3.PNG)
+![Détails TP1-4](details/TP1-4.PNG)
+![Détails TP1-5](details/TP1-5.PNG)
+![Détails TP1-6](details/TP1-6.PNG)
+![Détails TP1-7](details/TP1-7.PNG)
+![Détails TP1-8](details/TP1-8.PNG)
+![Détails TP1-9](details/TP1-9.PNG)
+![Détails TP1-10](details/TP1-10.PNG)
 ## TP 2 : Programmation Java côté serveur
 ### Objectifs pédagogiques
 ![Objectifs Pedagogiques TP2](ObjectifsPedagogiques/OP2.PNG)
