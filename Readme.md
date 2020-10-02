@@ -13,7 +13,8 @@
 ### TP 7 : Optimisation d'une Single-Page Application
 ![Objectifs Pedagogiques TP7](sujetsTps/ObjectifsPedagogiques/OP7.PNG)
 
-[Plus de détails sur les différents TPs dans le repertoire "sujetsTps"](sujetsTps)
+[Plus de détails sur les différents TPs dans le repertoire "sujetsTps"](sujetsTps)<br/>
+
 Lien vers le site de l'UE : [https://perso.liris.cnrs.fr/lionel.medini/enseignement/M1IF03/](https://perso.liris.cnrs.fr/lionel.medini/enseignement/M1IF03/)
 
 
