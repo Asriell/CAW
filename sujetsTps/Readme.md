@@ -1,6 +1,5 @@
 # Les différents TPs
-
-+ [TP 1 : technologies côté serveur](#TP 1 : technologies côté serveur)
+[TP 1 : technologies côté serveur](#tp-1--technologies-côté-serveur)
 # Détails des TPs
 ## TP 1 : technologies côté serveur
 ### Objectifs pédagogiques
